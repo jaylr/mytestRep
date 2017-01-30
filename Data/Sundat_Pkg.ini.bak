@@ -1,0 +1,9 @@
+[version]
+build_version   	=5
+major_version		= 2
+minor_version		= 8
+maintenance_version = 2
+#### Following parameters can be modified for development/testing purpose.  In production environment no need to set these parameters, default values will be suffficient
+# prog_mode          = None
+# exclude_dir	     = Data, Doc, Drawings, Extern, Output, Web
+# extension			 = rbs,rb,so

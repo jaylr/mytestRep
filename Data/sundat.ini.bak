@@ -1,0 +1,113 @@
+# Layout Tool properties stored in ini file format
+#    [section1]
+#     property=value
+#    #comment line
+#[section2]
+#      ...
+# If there is any property/value pair is present after an empty line then it is stored in global section
+
+# System Level Property, not to be modified by User
+[system] 
+product_name             	 	= SunDAT
+# All directories are relative to root_dir
+data_dir                 		= Data
+draw_dir                 		= Drawings
+html_dir                  		= Web/html
+help_dir                  		= Web/help
+output_dir               		= Output
+hscope_dir						= Helioscope
+extern_dir               		= Extern
+pvsyst_dir						= PVSyst/Files
+terminal_dir					= Web/jquery.terminal
+# Following files are expect to be present in data_dir
+gcl_db                    		= GCompData.db 
+ashrae_fname			  		= ASHRAE.dmp 
+map_fname                 		= Map.ini
+override_fname            		= sundat_override.ini
+default_fname             		= Default_comp.ini
+favourite_fname           		= Favourite_comp.ini
+inverter_list_fname				= inverter_list.txt
+country_data					= country_data.ini
+country_data_override			= country_data_override.ini
+structures_fname				= structures.ini
+# Following files are expect to be present in draw_dir
+base_module               		= Base_Module.skp
+base_inverter              		= Base_Inverter.skp
+base_invenc               		= Base_InvEnc.skp
+base_combiner             		= Base_Combiner.skp
+panelclaw_deflector				= PC-DEFLECTOR-10PB.skp
+panelclaw_support				= PC-SUPPORT-10PB.skp
+# Following files are expected in pvsyst_dir
+automation_fname				= autopv.exe
+automation_template_fname		= automation-template.rb
+automation_script_fname			= automation.rb
+weather_help_fname				= Weather_data_conversion.html
+#Sketchup UI specific Data
+dialog_width              		= 640
+hide_menu_dialog_width          = 465
+additional_dialog_width			= 230
+dialog_height             		= 690
+visualization_dialog_width     	= 500 
+visualization_dialog_height    	= 300
+download_dialog_width     		= 400 
+download_dialog_height    		= 200
+help_dialog_width         		= 800
+help_dialog_height        		= 600
+
+# Software Specific properties can be updated by the user
+# User updated value will be present in override_fname
+[usersoftware]
+# Whether to remove skp files from cache_dir
+purge_skp                 		= true 
+debug                     		= true
+# Maximum level to output messages 
+# Possible levels for debug : [ "Emerg", "Alert", "Crit", "Err", "Warn", "Notice", "Info", "Debug1", "Debug2", "Debug3" ]
+debug_level               		= Info
+# Alert and above severity level of logging message will terminate the program
+terminate_level           		= Crit
+# File to log Logger output message, this file will be present in output_dir
+debug_file                		= sundat.log
+# Generate html file even if the file already exist
+force_cache               		= true
+# Possible values [ fast, normal, slow ]
+layout_algorithm          		= normal
+version_check_server      		= sundat-tool.sunedison.com
+version_check_path      		= /releases
+product_version_fname     		= sundat-version.txt
+gcl_version_fname         		= gcl-version.txt
+googlemap_server          		= api.geonames.org
+help_server						= sundat-tool.sunedison.com
+help_root_path					= /help
+tips_url						= http://sundat/forum/index.php?mode=index&category=4
+announcements_url				= http://sundat/forum/index.php?mode=index&category=1
+forum_url						= http://sundat/forum/index.php?mode=index&category=2
+specs_url                       = http://sundat/specs/
+scripts_list_url				= http://sundat/releases/scripts/list.php
+scripts_url						= http://sundat/releases/scripts/
+hs_plugin_url                   = http://sundat/releases/helioscope/index.php
+hs_server_url					= https://helioscope.folsomlabs.com/
+#Number of layout iterations to be stored
+layout_iterations_store   		= 10
+feedback_mail			  		= amorse@sunedison.com
+rendering_mode			  		= texture
+groundmount_structure			= "Apollo A90,Apollo AP90,NEXTracker,Array Tech,Apollo Fixed,Flex Rack,Gestamp,Other"
+rooftop_structure		 		= "Delta Rack,Min Pen,PanelClaw,SunLink,Other"
+conduit_radius					= 2
+#This medeek key is valid till 2015-03-18. We will need to renew this every year
+medeek_key						= MEDEEK10822115
+solardata_key                   = kw7mm7CdWOFXtWfKyWjV3LkcC2cb00SPls9kd0Bw
+hs_plugin_name					= "HelioScope Tools"
+hs_plugin_version 				= 1.3
+hs_plugin_ie9_version 			= 1.3.3
+
+[usersettings]
+theme							= sunny
+skipped_module_selection   		= true
+render2D                  		= true
+#Time interval used for shadow simulation and rendering in seconds
+shadow_interval           		= 3600
+label_2D						= false
+min_wire_factor					= 3.0
+stop_wiring 					= false
+text_height 					= 6
+

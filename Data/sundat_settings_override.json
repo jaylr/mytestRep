@@ -1,0 +1,13 @@
+{
+  "usersettings": {
+    "hide_getting_started_guide": true,
+    "autocad_templates_folder": "C:\\Users\\rajasej\\Box Sync\\Design Automation\\AutoCadTemplates",
+    "advanced_bom_calculations": true
+  },
+  "country": {
+    "general": {
+      "display_standard": "USA"
+    }
+  }
+}
+

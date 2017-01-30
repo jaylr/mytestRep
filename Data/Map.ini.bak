@@ -1,0 +1,386 @@
+#Define mapping for menu and MVC
+#If any key value associated with multiple menu items they are captured here
+#Enter comma separated values within quotes
+[menumap]
+home			 	 = "site, preparation, shadow, cli, majorcomp"
+tables_and_blocks	 = "grfttable, rtfttable, trtable, block, canopy, nxtstructure"
+layout_operation 	 = "layout, canopylayout, gmstructurelayout, rtftstructurelayout,dcelayout, silayout, cilayout, gmsilayout, gmcilayout, aced,"
+results				 = "layout_result, topo, electrical_analysis, nrelsam"
+schedules            = "bom, wireschedule, acwireschedule"
+export               = "export_acad, export_layout, export_excel"
+tools_menu			 = "all_components, tools,whatif,labels,sheetSet"
+settings			 =  "general_settings, about"
+_displayorder	 	 = "home, tables_and_blocks, layout_operation, results, schedules, export, tools_menu, settings"
+
+#If any class not present keep empty string.
+#For GCL components, this string is same as category name.
+
+
+[menu]
+view			= MenuView
+controller		= MenuController
+visible			= yes
+
+[home]
+displayname	    = Setup
+
+[site]
+model			= SiteModel
+view			= SiteView
+controller		= SiteController
+displayname	    = "Site and Geo"
+visible			= Yes
+newhelp         = SiteandGeo
+
+[preparation]
+model			= SiteModel
+view			= PreparationView
+controller		= PreparationController
+displayname	    = Offsets/Heights
+visible			= Yes
+newhelp         = Sitepreparation
+[majorcomp]
+displayname	    = 'Major Components'
+visible			= yes
+model			= SiteModel
+view			= MajorComponentsView
+controller		= MajorComponentsController
+newhelp			= Addingmajorcomponents
+[shadow]
+model			= ShadowModel
+view			= ShadowView
+controller		= ShadowController
+displayname	    = Shadow
+visible			= yes
+newhelp            = Shadowsetbacks
+
+[tables_and_blocks]
+displayname	    = Tables/Blocks
+
+[grfttable]
+model			= GroundMountFixedTiltTableModel
+view			= GroundMountFixedTiltTableView
+controller		= GroundMountFixedTiltTableController
+displayname	    = "Fixed Tilt"
+visible			= no
+help            = Fixed-Tilt-Tables
+[rtfttable]
+model			= RooftopFixedTiltTableModel
+view			= RooftopFixedTiltTableView
+controller		= RooftopFixedTiltTableController
+displayname	    = "Fixed Tilt"
+visible			= yes
+newhelp            = Definingtables
+[trtable]
+model			= TrackerTableModel
+view			= TrackerTableView
+controller		= TrackerTableController
+displayname	    = Tracker
+visible			= no
+help            = Tracker-Tables
+
+[block]
+model			= BlockModel
+view			= BlockView
+controller		= BlockController
+displayname	    = "Block"
+visible			= yes
+help            = Block
+extended_display = yes
+
+[canopy]
+model			= CanopyTableModel
+view			= CanopyTableView
+controller		= CanopyTableController
+displayname	    = "Canopy"
+visible			= no
+help            = Canopy-Tables
+
+[nxtstructure]
+model			= NextrackerStructureModel
+view			= NextrackerStructureView
+controller		= NextrackerStructureController
+displayname	    = "Structures"
+visible			= yes
+help            = Nextracker-Structures
+[topo]
+view			= TopoAnalysisView
+controller		= TopoAnalysisController
+model			= TopoAnalysisModel
+displayname	    = "Topography"
+visible			= yes
+help            = Topo-Analysis
+
+[layout_operation]
+displayname	    = Layout
+
+[layout]
+view			= LayoutView
+displayname	    = "Modules"
+visible			= yes
+controller		= LayoutController
+newhelp         = Renderinglayouts
+	 
+[canopylayout]
+view			= CanopyLayoutView
+model                   = CanopyLayoutModel
+displayname             = "Modules"
+visible			= no
+controller		= CanopyLayoutController
+newhelp                 = Renderinglayouts
+
+[silayout]
+view			= StringInverterLayoutView
+model			= StringInverterLayoutModel
+displayname	    = "DC Electrical"
+visible			= no
+controller		= StringInverterLayoutController
+help			= Electrical-Layout
+
+
+[dcelayout]
+view			= DCELayoutView
+displayname	    = "DC Electrical"
+visible			= yes
+controller		= DCELayoutController
+help			= Electrical-Layout
+extended_display = yes
+
+[cilayout]
+view			= CentralInverterLayoutView
+model			= CentralInverterLayoutModel
+displayname	    = "DC Electrical"
+visible			= no
+controller		= CentralInverterLayoutController
+help			= Electrical-Layout			 
+
+[gmsilayout]
+view			= GroundMountStringInverterLayoutView
+model			= GroundMountStringInverterLayoutModel
+displayname	    = "Old DC Electrical"
+visible			= no
+controller		= GroundMountStringInverterLayoutController
+help			= Electrical-Layout			 
+
+[gmcilayout]
+view			= GroundMountCentralInverterLayoutView
+model			= GroundMountCentralInverterLayoutModel
+displayname	    = "Old DC Electrical"
+visible			= yes
+controller		= GroundMountCentralInverterLayoutController
+help			= Electrical-Layout
+
+[aced]
+view            = ACElectricalDesignView
+model           = ACElectricalDesignModel
+displayname     = "AC Electrical"
+visible         = yes
+controller      = ACElectricalDesignController
+help            = AC-Electrical-Design
+	 
+[nrelsam]
+view			= NrelSamView
+model                   = NrelSamInputModel
+controller		= NrelSamController
+displayname		= "Energy"
+visible			= yes
+help            = NrelSam
+extended_display = yes
+
+[gmstructurelayout]
+view			= GroundMountStructureLayoutView
+model			= GroundMountStructureLayoutModel
+displayname	    = "Structural"
+visible			= no
+controller		= GroundMountStructureLayoutController
+help			= Structural			 
+
+[rtftstructurelayout]
+view			= RooftopStructureLayoutView
+model			= RooftopStructureLayoutModel
+displayname	    = "Structural"
+visible			= yes
+controller		= RooftopStructureLayoutController
+help			= Structural			
+
+[results]
+displayname		= Analysis
+
+[schedules]
+displayname     = Schedules
+
+[layout_result]
+view			= LayoutResultView
+controller		= LayoutResultController
+displayname		= "Layout Results"
+visible			= yes 
+help            = Layout-Results
+extended_display = yes
+
+[electrical_analysis]
+model           = ElectricalAnalysisModel
+view			= ElectricalAnalysisView
+controller		= ElectricalAnalysisController
+displayname		= "Electrical"
+visible			= yes
+extended_display = yes
+help            = Help-Topic-Missing
+
+[all_components]
+model			= GCompModel
+view		    = GCompView
+controller		= GCompController
+displayname	    = "Library"
+visible			= yes
+help            = Components
+
+[gc_component]
+model           = GCompModel
+[gc_module]
+model			= GModuleModel
+base_skp        = Base_Module
+[gc_inverter]
+model			= GInverterModel
+base_skp        = Base_Inverter
+[gc_interconnection]
+model			= GInterconnectionModel
+base_skp        = Base_Interconnection
+[gc_transformer]
+model			= GTransformerModel
+base_skp        = Base_Transformer
+[gc_switchgear]
+model			= GSwitchgearModel
+base_skp        = Base_Switchgear
+[gc_disconnect]
+model			= GDisconnectModel
+base_skp        = Base_Disconnect
+[gc_fac_meter]
+model			= GFacMeterModel
+base_skp        = Base_Fac_Meter
+[gc_gen_meter]
+model			= GGenMeterModel
+base_skp        = Base_Gen_Meter
+[gc_panel]
+model			= GPanelModel
+base_skp        = Base_Panelboard
+[gc_invenc]
+model			= GInvEncModel
+[gc_combiner]
+model			= GCombinerModel
+base_skp        = Base_Combiner
+[gc_conductor]
+model			= GConductorModel
+[gc_conduit]
+model			= GConduitModel
+
+[tools_menu]
+displayname	    = Tools
+
+[tools]
+view			= ToolsView
+controller		= ToolsController
+displayname	    = Utilities
+visible			= yes
+help            = Utilities
+
+
+[cli]
+view			= CliView
+controller		= CliController
+model           = CliModel
+displayname	    = Scripting
+visible			= yes
+help            = Cli
+
+[whatif]
+view			= WhatIfView
+controller		= WhatIfController
+model			= WhatIfModel
+displayname	    = "What If Analysis"
+visible			= yes
+help            = WhatIf
+
+[bom]
+model			= BOMModel
+view			= BOMView
+controller		= BOMController
+displayname	    = "Bill of Materials"
+visible			= yes
+newhelp         = Obtainingbillofmaterials
+
+[wireschedule]
+model 			= DCWireScheduleModel
+view 			= DCWireScheduleView
+controller 		= DCWireScheduleController
+displayname	    = "DC Wire Schedule"
+visible 		= yes
+extended_display = yes
+help			= Wire-Schedule
+
+[acwireschedule]
+model 			= ACWireScheduleModel
+view 			= ACWireScheduleView
+controller 		= ACWireScheduleController
+displayname	    = "AC Wire Schedule"
+visible 		= yes
+extended_display = yes
+help			= Wire-Schedule
+
+[labels]
+view			= LabelsView
+controller		= LabelsController
+displayname	    = "Annotations"
+visible			= yes
+help			= Annotations
+
+[sheetSet]
+model			= SheetSetModel
+view			= SheetSetView
+controller		= SheetSetController
+displayname	    = "Project Properties"
+visible			= yes
+help			= ProjectProperties
+
+[netlist]
+view			= NetlistView
+controller		= NetlistController
+displayname	    = "Netlist Tools"
+visible			= yes
+
+[export]
+displayname     = Export
+
+[export_acad]
+view            = AutoCADExportView
+controller      = AutoCADExportController
+displayname     = "AutoCAD"
+visible         = true
+
+[export_layout]
+view            = LayOutExportView
+controller      = LayOutExportController
+displayName     = "Layout"
+visible         = true
+
+[export_excel]
+view            = ExcelExportView
+controller      = ExcelExportController
+displayName     = "Excel"
+visible         = true
+
+[settings]
+displayname	    = Settings
+
+[general_settings]
+view            = GeneralSettingsView
+controller      = GeneralSettingsController
+displayname     = "Settings"
+visible         = yes
+help            = Settings
+
+[about]
+view			= AboutView
+controller		= AboutController
+displayname	    = About
+visible			= yes
+help            = About
